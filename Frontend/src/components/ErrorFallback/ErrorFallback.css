@@ -1,0 +1,34 @@
+.fallback-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: azure;
+    position: relative;
+    z-index: 1;
+    flex-direction: column;
+  }
+  .fallbacklogo{
+    width: 300px;
+  }
+  .oopstxt{
+    color: #3b3b3b;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: auto;
+    padding-bottom: 20px;
+  }
+  .somethingtxt{
+    color: #3b3b3b;
+    font-weight: bold;
+    font-family: cursive;
+    padding-bottom: 10px;
+  }
+  .errortxt{
+    color: #3b3b3b;
+    font-weight: bold;
+    font-family: cursive;
+    text-align: center;
+    line-height: 25px;
+  }

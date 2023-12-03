@@ -1,0 +1,115 @@
+.fileinput {
+	display: none;
+}
+.popupdiv {
+	width: 420px;
+	padding: 15px 15px 0px 15px;
+}
+.upload {
+	background: rgb(243 207 0 / 11%);
+	border-radius: 5px;
+	padding: 7px;
+	width: 100%;
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 17px !important;
+	color: #272727;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: center;
+}
+.confirm {
+	background: #f3cf00;
+	box-shadow: 0px 4px 16px rgba(243, 207, 0, 0.2);
+	border-radius: 6px;
+	border: none;
+	outline: none;
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 16px;
+	color: #272727;
+	padding: 10px 20px !important;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.headdiv {
+	display: flex;
+	justify-content: right;
+}
+
+.filediv {
+	padding-top: 20px;
+}
+.uploadicon {
+	width: 20px;
+}
+.closebtn {
+	background: transparent;
+	border: none;
+	outline: none;
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 20px;
+	color: #d9d9d9;
+	margin-bottom: 0;
+	padding: 0 !important;
+}
+.shippingpill {
+	width: 100%;
+	margin-bottom: 10px;
+}
+.label {
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 16px !important;
+	color: #272727;
+	margin-bottom: 0;
+}
+.paymentdetails {
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 34px;
+	color: #272727;
+	text-align: center;
+}
+.pleasetxt {
+	font-family: "Rubik";
+	font-weight: 400;
+	font-size: 18px;
+	text-align: center;
+	color: #272727;
+}
+.port {
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 20px;
+	color: #333333;
+	text-align: center;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+.bookingid {
+	font-family: "Rubik";
+	font-weight: 400;
+	font-size: 14px;
+	color: #828282;
+	text-align: center;
+}
+.inputdiv{
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 10px;
+}
+.utanumber{
+	width: 50%;
+}
+.input{
+	width: 100%;
+	outline: none !important;
+}
+.portdiv{
+	padding: 20px 0px;
+}

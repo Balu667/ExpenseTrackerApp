@@ -1,0 +1,443 @@
+.countrydiv {
+	background: rgba(30, 106, 255, 0.1);
+	width: 100%;
+	position: relative;
+	padding: 0px 30px;
+	min-height: 100vh;
+}
+
+.headingdiv {
+	display: flex;
+	justify-content: space-between;
+}
+
+.titledivs {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding-top: 20px;
+}
+
+.buttondiv {
+	display: flex;
+	gap: 20px;
+	width: 50%;
+	justify-content: right;
+}
+
+.button {
+	background: #f4da47;
+	border-radius: 4px;
+	border: none;
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 17px;
+	color: #272727;
+	padding: 2px 20px !important;
+}
+
+.title {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 38px;
+	color: #000000;
+	margin-bottom: 0px;
+}
+
+/* -------Add Country ----------- */
+.add_div {
+	padding: 15px 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
+.add_div-heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.add_div-heading > h3 {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 28px;
+	color: #333333;
+}
+
+.add_div-heading > button {
+	background: transparent;
+	color: #d9d9d9;
+	border: none;
+	padding: 0px !important;
+	font-size: 24px;
+	line-height: 28px;
+}
+
+.formlabel {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 17px;
+	color: #000000;
+}
+
+.formcontrol {
+	width: 100%;
+	padding: 10px !important;
+	border: 1px solid #d9d9d9;
+	border-radius: 4px;
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.formcontrol:focus {
+	border: 1px solid #ced4da !important;
+	box-shadow: none !important;
+}
+
+.MuiToggleButton-root {
+	width: 100% !important;
+	margin-top: 20px !important;
+}
+
+.MuiToggleButton-root {
+	width: 50% !important;
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	color: #272727;
+}
+
+.MuiDataGrid-row.Mui-selected {
+	background: #fff !important;
+	color: #000 !important;
+}
+
+.savebtn {
+	background: #f3cf00;
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	color: #272727;
+	box-shadow: 0px 4px 16px rgba(243, 207, 0, 0.2);
+	width: 100%;
+	text-align: center;
+	border: none;
+	outline: none;
+	font-weight: bold;
+	padding: 10px !important;
+}
+
+.icon {
+	padding: 0 !important;
+}
+
+.searchdiv {
+	width: 100%;
+	display: flex;
+	padding-top: 15px;
+	column-gap: 20px;
+}
+
+.chsearchbox {
+	display: flex;
+	align-items: center;
+	border: 1px solid #d9d9d9 !important;
+	background: #fff;
+	border-radius: 5px;
+	padding-left: 15px !important;
+	width: 100%;
+}
+
+.chsearchbox > div {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+}
+
+.chsearchbox > input {
+	border: none !important;
+	width: 95%;
+	outline: none;
+	background-color: transparent !important;
+}
+
+.selectcontrol {
+	padding: 0 !important;
+	border: none !important;
+	background: transparent !important;
+	outline: none;
+}
+
+.selectcontrol:focus {
+	box-shadow: none;
+}
+
+.MuiDataGrid-root {
+	background: #fff !important;
+	border-radius: 5px !important;
+}
+
+.MuiToggleButtonGroup-root {
+	width: 100% !important;
+}
+
+.MuiDataGrid-columnHeaderTitleContainer:focus {
+	outline: none !important;
+	border-color: #fff !important;
+}
+
+.MuiIconButton-sizeSmall,
+.MuiDataGrid-iconSeparator {
+	display: none !important;
+}
+
+.MuiDataGrid-columnHeaderTitle {
+	font-weight: bold !important;
+	font-size: 12px;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: #858585 !important;
+	letter-spacing: 0.13em;
+}
+
+.MuiDataGrid-cellContent {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	color: #000000 !important;
+}
+
+.MuiDataGrid-cell:focus,
+.MuiDataGrid-columnHeader:focus {
+	outline: none !important;
+}
+
+/* ----------- select-------- */
+.MuiInput-underline::before,
+.MuiInput-underline::after {
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.togglebtn > .Mui-selected {
+	background: #000 !important;
+	color: #fff !important;
+	border-radius: 5px !important;
+}
+.togglechildbtn {
+	padding: 10px !important;
+}
+
+.MuiMenu-root {
+	width: 150px !important;
+}
+
+.portalign {
+	display: flex;
+	gap: 10px;
+	justify-content: space-between;
+}
+
+.addtitle {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: #333333;
+	margin-bottom: 0 !important;
+}
+
+.scheduleid {
+	font-weight: 400;
+	font-size: 15px;
+	color: #000000;
+	margin-bottom: 0 !important;
+}
+
+::placeholder {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: #858585;
+}
+
+.css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
+	padding: 10px !important;
+	text-transform: capitalize !important;
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	color: #272727 !important;
+}
+.scheduleid {
+	font-weight: 400;
+	font-size: 15px;
+	color: #000000;
+	margin-bottom: 0 !important;
+}
+.add_div-heading > div > h3 {
+	margin-bottom: 0;
+}
+.inputflex {
+	display: flex;
+	justify-content: space-between;
+	gap: 5px;
+}
+.setwidth {
+	width: 48%;
+}
+input[type="date"]::before {
+	color: #000;
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
+.editicon {
+	color: #f4da47;
+	font-size: 20px;
+}
+.MuiDataGrid-columnHeaderTitleContainer,
+.MuiDataGrid-cell--textLeft {
+	justify-content: center !important;
+}
+.scheduleStyle {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	color: #f4da47 !important;
+}
+.viewinfo {
+	color: #f4da47 !important;
+	cursor: pointer;
+	font-family: "Rubik";
+	font-style: normal;
+	border: none;
+	background-color: transparent;
+	padding: 5px 10px !important;
+	border-radius: 5px;
+}
+.viewinfo:hover {
+	border: 2px solid #f4da47;
+}
+
+.tapdiv {
+	width: 100%;
+	gap: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+.flextapdiv {
+	display: flex;
+	align-items: center;
+}
+.flextapdivtxt {
+	background-color: #858585;
+	border-radius: 5px 0px 0px 5px;
+	padding: 10px 12px;
+	width: 40px;
+	text-align: center;
+	font-family: "Rubik";
+	font-style: normal;
+	margin-bottom: 0;
+}
+.flextapdivtxt > p {
+	margin-bottom: 0;
+}
+.flextapdiv > button {
+	background: #ffffff;
+	border: 1px solid #d9d9d9;
+	border-radius: 0px 5px 5px 0px;
+	font-family: "Rubik";
+	font-style: normal;
+	min-width: 100px;
+	padding: 10px !important;
+	color: #858585;
+	white-space: pre;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100px;
+}
+.containermanagement {
+	background: #f3cf00;
+	box-shadow: 0px 4px 16px rgba(243, 207, 0, 0.2);
+	border-radius: 6px;
+	border: none;
+	outline: none;
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 16px;
+	color: #272727;
+	padding: 5px 50px;
+	white-space: pre;
+}
+.containermanagement:disabled {
+	cursor: no-drop;
+}
+.btnitems {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+.activenumber {
+	background-color: #f4da47 !important;
+}
+.activbtn {
+	background-color: #272727 !important;
+	color: #f4da47 !important;
+}
+.cfslist {
+	padding-top: 65px;
+}
+.listhead {
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 24px;
+	color: #333333;
+	margin-bottom: 0;
+}
+.backbtn {
+	border: none;
+	outline: none;
+	padding: 0 !important;
+	background: transparent;
+	font-family: "Rubik";
+	font-weight: 500;
+	font-size: 20px;
+	color: #272727;
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+.backbtndiv{
+	padding-top: 10px;
+}

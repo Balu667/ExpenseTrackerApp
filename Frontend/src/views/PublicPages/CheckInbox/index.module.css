@@ -1,0 +1,59 @@
+.Checktxt{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 40px;
+    color: #272727;
+}
+.forms{
+    text-align: center;
+}
+.logodiv{
+    padding-top: 20px;
+}
+.inboxbody{
+    position: relative;
+    top: -50px;
+}
+.newpasswordtxt{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 27px;
+    color: #858585;
+}
+.note{
+    font-family: 'Rubik';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #858585;
+    width: 300px;
+    margin: auto;
+    padding-bottom: 30px;
+}
+.note>span{
+    font-weight: bold;
+    font-style: italic !important;
+    font-family: sans-serif;
+}
+
+.backtologin{
+    background: #F3CF00 !important;
+    border-radius: 6px;
+    padding: 10px  20px !important;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+    border: none !important;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.backtologin:hover {
+    color: #000;
+}

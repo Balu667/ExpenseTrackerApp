@@ -1,0 +1,199 @@
+.pbcontiner {
+	padding-bottom: 50px;
+}
+.backbtn {
+	border: none;
+	display: flex;
+	align-items: center;
+	background: transparent;
+	outline: none;
+	gap: 10px;
+	font-family: "Rubik";
+	font-weight: 500;
+	font-size: 20px;
+	color: #272727;
+}
+.mainbox {
+	display: flex;
+	border-bottom: 1px solid #d9d9d9;
+	padding: 15px 0px;
+}
+.addressdiv {
+	display: flex;
+	padding: 15px 0px;
+	padding-bottom: 40px;
+}
+.titlediv {
+	width: 30%;
+}
+.title {
+	font-family: "Rubik";
+	font-weight: bold;
+	font-size: 27px;
+	color: #333333;
+	margin-bottom: 0;
+}
+.contentdiv {
+	width: 70%;
+}
+.titlediv > h1 {
+	font-family: "Rubik";
+	font-weight: 500;
+	font-size: 20px;
+	color: #333333;
+	margin-bottom: 0;
+}
+.addresscard {
+	display: flex;
+	gap: 10px;
+}
+.titlediv > p {
+	font-family: "Rubik";
+	font-weight: 400;
+	font-size: 16px;
+	color: #494949;
+}
+.formdiv {
+	width: 100%;
+	display: flex;
+	gap: 10px;
+}
+.formgroup {
+	width: 50%;
+	padding-top: 5px;
+}
+.formcontrol:focus {
+	box-shadow: none !important;
+}
+.fill {
+	font-family: "Rubik";
+	font-weight: 400;
+	font-size: 16px;
+	color: #858585;
+}
+.doordiv {
+	width: 30%;
+}
+.building {
+	width: 70%;
+}
+.country,
+.state,
+.city {
+	width: 33%;
+}
+.fileuploaddiv {
+	background: rgba(243, 207, 0, 0.05);
+	border-radius: 7px;
+	width: 100%;
+	border: 1.5px solid #f4da47;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	margin-top: 20px;
+	align-items: center;
+}
+.uploadflex {
+	display: flex;
+	gap: 10px;
+}
+.uploadtxt > h4 {
+	font-family: "Rubik";
+	font-weight: 500;
+	font-size: 14px;
+	color: #000000;
+	margin-bottom: 0;
+}
+.uploadtxt > p {
+	font-family: "Rubik";
+	font-weight: 400;
+	font-size: 12px;
+	color: #272727;
+	margin-bottom: 0;
+}
+.uploadfiles {
+	border: 1px solid #f4da47;
+	border-radius: 4px;
+	font-family: "Rubik";
+	font-weight: bold;
+	font-size: 14px;
+	color: #f4da47;
+	background: transparent;
+}
+.hbl {
+	width: 100%;
+	padding-top: 10px;
+}
+.spanlabel {
+	font-family: "Rubik";
+	font-weight: 400;
+	font-size: 14px;
+	color: #858585;
+}
+input[type=checkbox]:checked {
+	background-color: #f4da47;
+	border-color: #f4da47;
+  }
+.saveFlag{
+	margin: 20px 0px;
+}
+@media (max-width: 600px) {
+	.titlediv {
+		width: 100%;
+	}
+	.contentdiv{
+		width: 100%;
+	}
+	.mainbox,
+	.dimensions,
+	.addressdiv
+	 {
+		display: block;
+	}
+	.formdiv,
+	.addanother {
+		width: 100%;
+	}
+	.pbcontiner {
+		padding-bottom: 50px;
+	}
+	.footerdiv{
+		width: 100%;
+		flex-direction: column;
+	}
+	.footerflex , .footerbtns{
+		width: 100%;
+		justify-content: space-between;
+	}
+	.footerflex , .footerbtns{
+		width: 90%;
+	}
+	.footerbtns{
+		padding-top: 10px;
+	}
+	.footerflexdiv{
+		border: none;
+	}
+	.togglediv{
+		width: 100%;
+	}
+	.dimen,.dimenlabel{
+		padding: 0px 5px !important;
+	}
+	.ratecard{
+		width: 350px !important;
+	}
+	.dimensions{
+		padding-bottom: 30px;
+	}
+	.formgroup , .doordiv , .building , .country , .state , .city{
+		width: 100%;
+	}
+	.formdiv{
+		display: block;
+	}
+	.titlediv>input{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}

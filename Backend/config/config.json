@@ -1,0 +1,26 @@
+{
+  "port": "5008",
+  "mongodb": {
+    "host": "192.168.0.200",
+    "port": "37017",
+    "database": "allmasters",
+    "username": "AMSLocal_admin",
+    "password": "Ams2023$"
+  },
+  "mongodb2": {
+    "host": "192.168.0.200",
+    "port": "37017",
+    "database": "schedulerapi",
+    "username": "AMSLocal_admin",
+    "password": "Ams2023$"
+  },
+  "rabbitmq": {
+    "username":"allmasters",
+    "password":"Allmasters1",
+    "host": "192.168.0.200",
+    "port": "5672"
+  },
+  "rmqQueue": {
+    "schedulerQueue":"schedulecutoffexpiry"
+  }
+}

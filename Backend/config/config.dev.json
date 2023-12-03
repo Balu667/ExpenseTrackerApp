@@ -1,0 +1,26 @@
+{
+  "port": "5008",
+  "mongodb": {
+    "host": "192.168.0.200",
+    "port": "37017",
+    "database": "allmastersdev",
+    "username": "AMSdev_rw",
+    "password": "$Amsrw23$"
+  },
+  "mongodb2": {
+    "host": "192.168.0.200",
+    "port": "37017",
+    "database": "schedulerapidev",
+    "username": "AMSdev_rw",
+    "password": "$Amsrw23$"
+  },
+  "rabbitmq": {
+    "username":"rmqdev",
+    "password":"Ams$2023",
+    "host": "192.168.0.200",
+    "port": "4672"
+  },
+  "rmqQueue": {
+    "schedulerQueue":"schedulecutoffexpiry"
+  }
+}

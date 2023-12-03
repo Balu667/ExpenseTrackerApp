@@ -1,0 +1,29 @@
+.maindiv {
+	width: 100%;
+	text-align: center;
+}
+.nobookings {
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 32px;
+	color: #272727;
+}
+.waitingtxt {
+	font-family: "Rubik";
+	font-weight: 400;
+	font-size: 18px;
+	text-align: center;
+	color: #858585;
+}
+.searchbtn {
+	background: #f3cf00;
+	box-shadow: 0px 4px 16px rgba(243, 207, 0, 0.2);
+	border-radius: 6px;
+	font-family: "Rubik";
+	font-weight: 600;
+	font-size: 16px;
+	color: #272727;
+    border: none;
+    padding: 10px 35px !important;
+    margin-bottom: 20px;
+}
