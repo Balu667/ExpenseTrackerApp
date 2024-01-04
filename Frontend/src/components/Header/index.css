@@ -1,13 +1,13 @@
 .brandlogo {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    letter-spacing: -0.05em;
-    color: #f2f2f2;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 28px;
+	letter-spacing: -0.05em;
+	color: #f2f2f2;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 }
 .username {
 	font-weight: 500;
@@ -106,10 +106,10 @@
 .linktag:hover {
 	color: #f2f2f2;
 }
-.headerlogo{
-	width: 40px;
+.headerlogo {
+	width: 150px;
 }
-.hellotextdiv{
+.hellotextdiv {
 	display: flex;
 	align-items: center;
 	gap: 7px;

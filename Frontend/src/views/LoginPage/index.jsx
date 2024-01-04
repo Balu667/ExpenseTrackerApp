@@ -3,21 +3,18 @@ import { AiFillEye } from "react-icons/ai";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginValidation } from "../../validationSchema/loginValidation";
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
 import { setProfileData } from "../../redux/slices/profileSlice";
 import jwtDecode from "jwt-decode";
 import { CircularProgress } from "@mui/material";
-import { logInApi } from "../../api/logInApi";
-import { useLogoutUser } from "../../hooks/userAuthManagement";
-import { closePopup, openPopup } from "../../redux/slices/popupSlice";
-import Popup from "../../components/ConfirmationPopup";
+import { logInApi } from "../../api/services";
+import { useSelector, useDispatch } from "react-redux";
 
 const Loginpage = () => {
 	const queryClient = useQueryClient();
@@ -25,9 +22,7 @@ const Loginpage = () => {
 	const {
 		handleSubmit,
 		formState: { errors },
-		control,
-		reset,
-		watch,
+		control
 	} = useForm({
 		resolver: yupResolver(loginValidation),
 		mode: "onTouched",
@@ -38,39 +33,18 @@ const Loginpage = () => {
 	});
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
-	const watchFields = watch();
-	const titleText = "Kind Note";
-	const contentText =
-		"Please know that we are currently operational only from Mumbai. Rest assured, we will soon be launching operations from more gateways. Stay tuned for further updates.";
-
-	const { mutateAsync: logOut, isLoading: isLogOutLoading } = useLogoutUser(
-		false,
-		watchFields.type
-	);
-
 	const loginData = useMutation({
 		mutationFn: (data) => logInApi(data),
 		onSuccess: async (data) => {
-			console.log(data,"data")
-			// if (data.status === 1) {
-			// 	const parsedData = JSON.parse(data.data);
-			// 	const decodedData = jwtDecode(parsedData.token);
-			// 	localStorage.setItem("allMasterToken", parsedData.token);
-			// 	localStorage.setItem("allMasterId", parsedData.userId);
-			// 	data.role = decodedData.role;
-			// 	dispatch(setProfileData(decodedData));
-			// 	await queryClient.refetchQueries({ queryKey: ["profileData"] });
-			// } else {
-			// 	if (data.status === 0 && data.data != null) {
-			// 		localStorage.setItem("allMasterId", data.data);
-			// 		setLoggedInCheck({
-			// 			userId: data.data,
-			// 			modal: true,
-			// 		});
-			// 	} else {
-			// 		toast.error(data.response);
-			// 	}
-			// }
+			if (data.status === 1) {
+				const decodedData = jwtDecode(data.token);
+				localStorage.setItem("token", data.token);
+				localStorage.setItem("userId", decodedData.user.userId);
+				dispatch(setProfileData(decodedData));
+				await queryClient.refetchQueries({ queryKey: ["profileData"] });
+			} else {
+				toast.error(data.response);
+			}
 		},
 		onError: (error) => {
 			toast.error(error.message.split(":")[1]);
@@ -78,7 +52,7 @@ const Loginpage = () => {
 	});
 
 	const onSubmit = (data) => {
-			loginData.mutate(data);
+		loginData.mutate(data);
 	};
 
 	function togglePasswordVisiblity() {
@@ -99,7 +73,7 @@ const Loginpage = () => {
 							<button
 								type="button"
 								className={styles.forgot}
-								onClick={() => dispatch(openPopup())}>
+								onClick={() => navigate("/register")}>
 								Register
 							</button>
 						</p>
@@ -109,13 +83,8 @@ const Loginpage = () => {
 						className={styles.form}
 						onSubmit={handleSubmit(onSubmit)}>
 						<div className={styles.Logodiv}>
-							<img
-								src="https://ticketsque.com/assets/logo-56665aa4.svg"
-								alt="AllMasters Logo"
-								className="masterlogo"
-							/>
+							<h1>Expense Tracker</h1>
 							<h5 className="pt-2">Welcome back !</h5>
-							{/* <p>Book & Track your shipments</p> */}
 						</div>
 						<Form.Group className="pt-2">
 							<Form.Label htmlFor="InputEmail1">
@@ -197,15 +166,6 @@ const Loginpage = () => {
 					</Form>
 				</div>
 			</div>
-			<Popup
-				titleText={titleText}
-				contentText={contentText}
-				handleAgree={() => {
-					navigate("/register");
-					dispatch(closePopup());
-				}}
-				isLogin={true}
-			/>
 		</>
 	);
 };

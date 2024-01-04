@@ -1,4 +1,1 @@
-# Node.js Tools for Visual Studio
-node_modules/
-log/
-.env
+node_modules

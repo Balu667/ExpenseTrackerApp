@@ -1,26 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter, useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import PublicApp from "./publicPaths";
 import UserApp from "./userPaths";
-import { removeProfileData } from "../redux/slices/profileSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function RouteChecker() {
-	const profileData = useSelector((state) => state.profile);
-	const dispatch = useDispatch();
-	if (profileData.signedIn === false) {
+	const profile = useSelector((state) => state.profile)
+	if (profile.signedIn === false) {
 		return <PublicApp />;
 	} else {
 		try {
-			const token = localStorage.getItem("allMasterToken");
+			const token = localStorage.getItem("token");
 			if (token == null) {
-				dispatch(removeProfileData());
 				return <PublicApp />;
-			}else{
-				return <UserApp />
+			} else {
+				return <UserApp />;
 			}
-	
 		} catch (error) {
-			dispatch(removeProfileData());
 			return <PublicApp />;
 		}
 	}

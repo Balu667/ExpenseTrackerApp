@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React, { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ToastContainer } from "react-toastify";
@@ -36,7 +36,7 @@ function App() {
 							</LocalizationProvider>
 						</Suspense>
 					</ErrorBoundary>
-					<ReactQueryDevtools initialIsOpen={false} />
+					{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 				</QueryClientProvider>
 				<ToastContainer position="top-center" />
 			</PersistGate>

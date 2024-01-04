@@ -10,14 +10,12 @@ import {
 	REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-// import localforage from "localforage";
 import { rootReducer } from "../slices/allReducers";
 
 const persistConfig = {
 	key: "root",
 	version: 1,
-	storage,
-	blacklist: ["popup", "commonPopup", "myBookingsCard"],
+	storage
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -4,11 +4,10 @@ import { lazy } from "react";
 const LoginPageComponent = lazy(() =>
 	import("../views/LoginPage/index")
 );
-
-
 const RegisterComponent = lazy(() =>
 	import("../views/Register/index")
 );
+
 
 
 const publicPaths = [
@@ -19,7 +18,7 @@ const publicPaths = [
 	{
 		path: "register",
 		element: RegisterComponent,
-	},
+	}
 ];
 
 function PublicApp() {
