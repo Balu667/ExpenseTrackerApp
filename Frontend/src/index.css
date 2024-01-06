@@ -88,6 +88,9 @@ input[type="checkbox"] {
 	}
 }
 @media (max-width: 600px) {
+	.btn-container{
+		flex-direction: column !important;
+	}
 	.MuiStep-root .MuiStepConnector-root {
 		top: 77px !important;
 		width: 116px !important;

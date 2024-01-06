@@ -37,11 +37,8 @@ const useDeleteExpense = () => {
 		onSuccess: (response) => {
 			queryClient.invalidateQueries({ queryKey: ["expensesByMonth"] });
 			toast.success(response.response);
-			dispatch(closePopup());
-			navigate("/rdt/rate");
 		},
 		onError: (error) => {
-			dispatch(closePopup());
 			toast.error(error.message.split(":")[1]);
 		},
 	});

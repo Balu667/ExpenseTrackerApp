@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import {
 	useCategories,
@@ -14,7 +14,7 @@ import moment from "moment";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useSelector } from "react-redux";
+import { CircularProgress } from "@mui/material";
 
 const expenseValidation = yup.object({
 	date: yup.string().trim().required("Date is required"),
@@ -47,8 +47,12 @@ const Dashboard = () => {
 	const { data: categories, isLoading } = useCategories();
 	const { mutate } = useDeleteExpense();
 	const { mutate: expenseMutate } = useChangeExpenseMonth();
-	const { data: expensesData, isLoading: expenseLoading } =
+	const { data: expensesData, isLoading: expenseLoading, refetch } =
 		useGetExpensesByMonth([date, userId]);
+
+	useEffect(() => {
+		refetch()
+	}, [])
 
 	const columns = [
 		{
@@ -114,6 +118,7 @@ const Dashboard = () => {
 						</button>
 						<button
 							className="delete-btn"
+							disabled={mutate.isLoading}
 							onClick={() =>
 								mutate({
 									expenseId: row._id,
@@ -121,7 +126,11 @@ const Dashboard = () => {
 									month: moment(row.date).format("MMMM"),
 								})
 							}>
-							Delete
+							{mutate.isLoading ? (
+								<CircularProgress />
+							) : (
+								"Delete"
+							)}
 						</button>
 					</div>
 				);
@@ -226,7 +235,8 @@ const Dashboard = () => {
 					</button>
 				</div>
 				<div>
-					{expensesData && expensesData[0]?.expenses.length > 0 ? <DataGrid
+					{expensesData && expensesData[0]?.expenses.length > 0 ? 
+					<DataGrid
 						sx={{ textTransform: "capitalize" }}
 						getRowId={(row) => row._id}
 						rows={

@@ -149,7 +149,7 @@ const Budgets = () => {
             </div>
             <div className="container">
                 <div>
-                    <DataGrid
+                    {expensesData.length > 0 ? <DataGrid
                         sx={{ textTransform: "capitalize" }}
                         getRowId={(row) => row._id}
                         rows={expensesData.length > 0 ? expensesData : []}
@@ -167,7 +167,9 @@ const Budgets = () => {
                         pageSizeOptions={[10]}
                         // loading={isFetching}
                         hideFooterSelectedRowCount={true}
-                    />
+                    /> : <div style={{ padding: '1rem', textAlign: 'center' }}>
+                        No data found.
+                    </div>}
                 </div>
             </div>
             <BudgetPopup data={data} show={show} handleClose={closePopup} type={type} handleSubmit={handleSubmit} watch={watch} reset={reset} errors={errors} control={control} />

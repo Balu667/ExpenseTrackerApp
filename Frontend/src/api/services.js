@@ -2,8 +2,6 @@ import { toast } from "react-toastify";
 import { URL } from "../config";
 import moment from "moment";
 
-let userId = localStorage.getItem("userId")
-
 export const saveregistration = async (data) => {
 	try {
 		const response = await fetch(URL + "user/register", {
@@ -196,6 +194,7 @@ export const getExpensesByDate = async (data) => {
 
 export const getExpensesByUserId = async () => {
 	let token = localStorage.getItem("token")
+	let userId = localStorage.getItem("userId")
 	try {
 		const response = await fetch(URL + "expense/getExpensesByUserId", {
 			method: "POST",
@@ -226,7 +225,7 @@ export const getExpensesByUserId = async () => {
 
 export const deleteExpenseById = async (data) => {
 	let token = localStorage.getItem("token")
-	data.userId = userId
+	data.userId = localStorage.getItem("userId")
 	try {
 		const response = await fetch(URL + "expense/deleteExpense", {
 			method: "POST",
@@ -257,6 +256,7 @@ export const deleteExpenseById = async (data) => {
 
 export const logoutUser = async () => {
 	let token = localStorage.getItem("token")
+	let userId = localStorage.getItem("userId")
 	try {
 		const response = await fetch(URL + "user/logout", {
 			method: "POST",
