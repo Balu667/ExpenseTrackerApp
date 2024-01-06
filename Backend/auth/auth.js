@@ -8,16 +8,16 @@ const verifyToken = (req, res, next) => {
             token = authHeader.split(" ")[1];
             jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
                 if (err) {
-                    return res.send({ status: 0, response: "User not authorized" });
+                    return res.status(401).send({ status: 0, response: "User not authorized" });
                 } 
                 next();
             });
         } else {
 
-            return res.send({ status: 0, response: "Token not provided" });
+            return res.status(401).send({ status: 0, response: "Un authorized access" });
         }
     } catch (error) {
-        return res.send({ status: 0, response: error.message });
+        return res.status(401).send({ status: 0, response: error.message });
     }
 };
 

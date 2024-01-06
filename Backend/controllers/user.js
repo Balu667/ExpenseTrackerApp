@@ -49,12 +49,12 @@ const logoutUser = async (req, res) => {
     const { userId } = req.body;
     let userExist
     try {
-        userExist = await User.updateOne({ _id: userId }, );
+        userExist = await User.updateOne({ _id: userId },);
         if (userExist == null) {
 
             return res.send({ status: 0, response: "Invalid request", });
         }
-        return res.send({ status: 1, response: "Loggedout in Successfully" });
+        return res.send({ status: 1, response: "Logged out in Successfully" });
     } catch (error) {
         return res.send({ status: 0, response: error.message });
     }
