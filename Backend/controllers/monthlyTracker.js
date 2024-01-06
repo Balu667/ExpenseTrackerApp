@@ -33,7 +33,7 @@ const addExpense = async (req, res) => {
         if (budgetExist == null) {
             createExpense = await MonthlyTracker.create({ userId: userId, month: month, year: year, expenses: { date: date, amount: amount, category: category } })
 
-            return res.send({ status: 0, response: "Expense added successfully" })
+            return res.send({ status: 1, response: "Expense added successfully" })
         }
 
         updateExpense = await MonthlyTracker.updateOne({ _id: budgetExist._id }, { $push: { expenses: { date: date, amount: amount, category: category } } })
