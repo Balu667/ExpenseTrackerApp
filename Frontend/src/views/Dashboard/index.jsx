@@ -24,8 +24,6 @@ const expenseValidation = yup.object({
 
 const Dashboard = () => {
 	let userId = localStorage.getItem("userId")
-	const profile = useSelector((state) => state.profile)
-	console.log(userId, profile)
 	const {
 		handleSubmit,
 		formState: { errors },
@@ -50,7 +48,7 @@ const Dashboard = () => {
 	const { mutate } = useDeleteExpense();
 	const { mutate: expenseMutate } = useChangeExpenseMonth();
 	const { data: expensesData, isLoading: expenseLoading } =
-		useGetExpensesByMonth([date,userId]);
+		useGetExpensesByMonth([date, userId]);
 
 	const columns = [
 		{
@@ -151,7 +149,6 @@ const Dashboard = () => {
 			: 0;
 	};
 
-
 	return (
 		<div className="dashboard-section">
 			<div className="maindiv">
@@ -229,7 +226,7 @@ const Dashboard = () => {
 					</button>
 				</div>
 				<div>
-					<DataGrid
+					{expensesData && expensesData[0]?.expenses.length > 0 ? <DataGrid
 						sx={{ textTransform: "capitalize" }}
 						getRowId={(row) => row._id}
 						rows={
@@ -251,10 +248,9 @@ const Dashboard = () => {
 						pageSizeOptions={[10]}
 						hideFooterSelectedRowCount={true}
 						disableColumnFilter
-					// autoHeight
-					// autoPageSize
-					// className="data-grid"
-					/>
+					/> : <div style={{ padding: '1rem', textAlign: 'center' }}>
+						No data found.
+					</div>}
 				</div>
 			</div>
 			<ExpensePopup

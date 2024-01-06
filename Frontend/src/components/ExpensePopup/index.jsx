@@ -22,8 +22,7 @@ function ExpensePopup({
 	handleSubmit,
 	reset,
 	errors,
-	watch,
-	control,
+	control
 }) {
 	const userId = localStorage.getItem("userId");
 	const queryClient = useQueryClient();
@@ -46,6 +45,7 @@ function ExpensePopup({
 	});
 
 	const onSubmit = (expensedata) => {
+		console.log("clicked")
 		if (type === "Update") {
 			expensedata.expenseId = data._id;
 		} else {
@@ -92,8 +92,8 @@ function ExpensePopup({
 							)}
 						/>
 						{errors.date && (
-							<span className="error">
-								{errors.country.message}
+							<span style={{ display: "block" }} className="error">
+								{errors.date.message}
 							</span>
 						)}
 					</Form.Group>
