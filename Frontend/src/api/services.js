@@ -3,7 +3,6 @@ import { URL } from "../config";
 import moment from "moment";
 
 let userId = localStorage.getItem("userId")
-let token = localStorage.getItem("token")
 
 export const saveregistration = async (data) => {
 	try {
@@ -42,6 +41,7 @@ export const getAllCategories = async () => {
 };
 
 export const insertExpense = async (data) => {
+	let token = localStorage.getItem("token")
 	try {
 		const response = await fetch(URL + "expense/addExpense", {
 			method: "POST",
@@ -52,6 +52,13 @@ export const insertExpense = async (data) => {
 
 			},
 		});
+		if (response.status === 401) {
+			localforage.clear();
+			localStorage.clear();
+			window.location.replace("/login");
+			toast.error("Unauthorized")
+			throw new Error("Unauthorized Access");
+		}
 		const responseJson = await response.json();
 		if (responseJson.status === 0) {
 			toast.error(responseJson.message);
@@ -65,6 +72,7 @@ export const insertExpense = async (data) => {
 };
 
 export const updateExpense = async (data) => {
+	let token = localStorage.getItem("token")
 	try {
 		const response = await fetch(URL + "expense/updateExpense", {
 			method: "POST",
@@ -75,6 +83,13 @@ export const updateExpense = async (data) => {
 
 			},
 		});
+		if (response.status === 401) {
+			localforage.clear();
+			localStorage.clear();
+			window.location.replace("/login");
+			toast.error("Unauthorized")
+			throw new Error("Unauthorized Access");
+		}
 		const responseJson = await response.json();
 		if (responseJson.status === 0) {
 			toast.error(responseJson.message);
@@ -88,6 +103,7 @@ export const updateExpense = async (data) => {
 };
 
 export const insertBudget = async (data) => {
+	let token = localStorage.getItem("token")
 	try {
 		const response = await fetch(URL + "expense/setBudget", {
 			method: "POST",
@@ -98,6 +114,13 @@ export const insertBudget = async (data) => {
 
 			},
 		});
+		if (response.status === 401) {
+			localforage.clear();
+			localStorage.clear();
+			window.location.replace("/login");
+			toast.error("Unauthorized")
+			throw new Error("Unauthorized Access");
+		}
 		const responseJson = await response.json();
 		if (responseJson.status === 0) {
 			toast.error(responseJson.message);
@@ -111,6 +134,7 @@ export const insertBudget = async (data) => {
 };
 
 export const updateBudget = async (data) => {
+	let token = localStorage.getItem("token")
 	try {
 		const response = await fetch(URL + "expense/updateBudgetById", {
 			method: "POST",
@@ -121,6 +145,13 @@ export const updateBudget = async (data) => {
 
 			},
 		});
+		if (response.status === 401) {
+			localforage.clear();
+			localStorage.clear();
+			window.location.replace("/login");
+			toast.error("Unauthorized")
+			throw new Error("Unauthorized Access");
+		}
 		const responseJson = await response.json();
 		if (responseJson.status === 0) {
 			toast.error(responseJson.message);
@@ -134,6 +165,7 @@ export const updateBudget = async (data) => {
 };
 
 export const getExpensesByDate = async (data) => {
+	let token = localStorage.getItem("token")
 	try {
 		const response = await fetch(URL + "expense/getByMonth", {
 			method: "POST",
@@ -143,6 +175,13 @@ export const getExpensesByDate = async (data) => {
 				"Authorization": `Bearer ${token}`
 			},
 		});
+		if (response.status === 401) {
+			localforage.clear();
+			localStorage.clear();
+			window.location.replace("/login");
+			toast.error("Unauthorized")
+			throw new Error("Unauthorized Access");
+		}
 		const responseJson = await response.json();
 		if (responseJson.status === 0) {
 			toast.error(responseJson.message);
@@ -156,7 +195,7 @@ export const getExpensesByDate = async (data) => {
 };
 
 export const getExpensesByUserId = async () => {
-
+	let token = localStorage.getItem("token")
 	try {
 		const response = await fetch(URL + "expense/getExpensesByUserId", {
 			method: "POST",
@@ -166,6 +205,13 @@ export const getExpensesByUserId = async () => {
 				"Authorization": `Bearer ${token}`
 			},
 		});
+		if (response.status === 401) {
+			localforage.clear();
+			localStorage.clear();
+			window.location.replace("/login");
+			toast.error("Unauthorized")
+			throw new Error("Unauthorized Access");
+		}
 		const responseJson = await response.json();
 		if (responseJson.status === 0) {
 			toast.error(responseJson.message);
@@ -179,6 +225,7 @@ export const getExpensesByUserId = async () => {
 };
 
 export const deleteExpenseById = async (data) => {
+	let token = localStorage.getItem("token")
 	data.userId = userId
 	try {
 		const response = await fetch(URL + "expense/deleteExpense", {
@@ -189,6 +236,13 @@ export const deleteExpenseById = async (data) => {
 				"Authorization": `Bearer ${token}`
 			},
 		});
+		if (response.status === 401) {
+			localforage.clear();
+			localStorage.clear();
+			window.location.replace("/login");
+			toast.error("Unauthorized")
+			throw new Error("Unauthorized Access");
+		}
 		const responseJson = await response.json();
 		if (responseJson.status === 0) {
 			toast.error(responseJson.message);
@@ -202,6 +256,7 @@ export const deleteExpenseById = async (data) => {
 };
 
 export const logoutUser = async () => {
+	let token = localStorage.getItem("token")
 	try {
 		const response = await fetch(URL + "user/logout", {
 			method: "POST",
@@ -211,6 +266,13 @@ export const logoutUser = async () => {
 				"Authorization": `Bearer ${token}`
 			},
 		});
+		if (response.status === 401) {
+			localforage.clear();
+			localStorage.clear();
+			window.location.replace("/login");
+			toast.error("Unauthorized")
+			throw new Error("Unauthorized Access");
+		}
 		const responseJson = await response.json();
 		if (responseJson.status === 0) {
 			toast.error(responseJson.message);
