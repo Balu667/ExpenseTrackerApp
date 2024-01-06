@@ -2,8 +2,7 @@ import {
 	Dialog,
 	DialogContent,
 	DialogTitle,
-	DialogActions,
-	Typography,
+	DialogActions
 } from "@mui/material";
 import { Button } from "react-bootstrap";
 import { Controller } from "react-hook-form";
@@ -93,12 +92,12 @@ function BudgetPopup({
 										value={field.value}
 										id="date"
 										views={["month", "year"]}
-										format="DD-MM-YYYY"
+										format="MMMM-YYYY"
 									/>
 								)}
 							/>
 							{errors.date && (
-								<span className="error">
+								<span style={{ display: "block" }} className="error">
 									{errors.date.message}
 								</span>
 							)}

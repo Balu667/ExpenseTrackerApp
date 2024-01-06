@@ -27,9 +27,9 @@
 	font-size: 16px;
 	font-weight: bold;
 }
-.overview-div{
+.budget-div{
 	width: 100%;
-	padding: 20px 0;
+	padding: 10px 0;
 	justify-content: space-between;
 }
 
@@ -1321,5 +1321,11 @@
 	position: relative;
 	padding-bottom: 60px;
 	min-height: 100vh;
+}
+.tb-header{
+	background-color: #2196f3;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
 }
 

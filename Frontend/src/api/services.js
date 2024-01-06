@@ -134,11 +134,10 @@ export const updateBudget = async (data) => {
 };
 
 export const getExpensesByDate = async (data) => {
-
 	try {
 		const response = await fetch(URL + "expense/getByMonth", {
 			method: "POST",
-			body: JSON.stringify({ month: moment(data).format("MMMM"), year: moment(data).format('YYYY'), userId: userId }),
+			body: JSON.stringify({ month: moment(data[0]).format("MMMM"), year: moment(data[0]).format('YYYY'), userId: data[1] }),
 			headers: {
 				"Content-Type": "application/json",
 				"Authorization": `Bearer ${token}`

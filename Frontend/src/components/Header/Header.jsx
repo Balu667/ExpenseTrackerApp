@@ -16,7 +16,7 @@ function Header() {
 					<h3>EXPENSE TRACKER</h3>
 				</Link>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav">
-					<GiHamburgerMenu />
+					<GiHamburgerMenu style={{ color: "#fff" }} />
 				</Navbar.Toggle>
 				<Navbar.Collapse
 					id="responsive-navbar-nav"
@@ -31,9 +31,9 @@ function Header() {
 						<Nav.Item className="d-flex gap-2">
 						</Nav.Item>
 						<Nav.Item>
-							<Button
+							<button className="header-btn"
 								onClick={() => mutate()}
-							>Logout</Button>
+							>Logout</button>
 						</Nav.Item>
 					</Nav>
 				</Navbar.Collapse>

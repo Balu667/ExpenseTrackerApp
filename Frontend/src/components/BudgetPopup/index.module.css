@@ -139,12 +139,6 @@
 	padding: 0 !important;
 }
 
-.searchdiv {
-	width: 100%;
-	display: flex;
-	padding-top: 20px;
-}
-
 .formcontrol option {
 	text-transform: capitalize;
 }

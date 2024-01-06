@@ -62,9 +62,7 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
 	-moz-appearance: textfield !important;
 }
-button {
-	padding: 10px !important;
-}
+
 input[type="checkbox"] {
 	padding: 3px !important;
 }
@@ -79,6 +77,9 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 990px) {
+	.header-btn{
+		margin-top: 5px;
+	}
 	.navbar-expand-lg .navbar-nav {
 		flex-direction: column !important;
 		justify-content: left !important;
@@ -104,6 +105,29 @@ input[type="checkbox"] {
 	}
 }
 @media (max-width: 500px) {
+	.budget-div{
+		padding: 0;
+	}
+	.overview-div{
+		margin-top: 5px;
+	}
+	.MuiDataGrid-cellContent{
+		font-size: 10px !important;
+	}
+	.MuiDataGrid-columnHeaderTitle{
+		font-size: 14px !important;
+	}
+	.button{
+		font-size: 10px !important;
+		padding: 2px 5px !important;
+	}
+	.btn-container {
+		gap: 2px;
+	}
+	.delete-btn{
+		font-size: 10px !important;
+		padding: 2px 5px !important;
+	}
 	.MuiDrawer-paper {
 		width: 400px !important;
 	}

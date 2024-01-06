@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Budgets.css";
 import { useCategories, useChangeExpenseMonth, useDeleteExpense, useGetExpensesByMonth, useGetExpensesByUserId } from "../../hooks/category";
 import Loader from "../../components/Loader/Loader";
@@ -45,7 +45,11 @@ const Budgets = () => {
         },
     });
 
-    const { data: expensesData, isLoading: expenseLoading } = useGetExpensesByUserId()
+    const { data: expensesData, isLoading: expenseLoading, refetch } = useGetExpensesByUserId()
+
+    useEffect(() => {
+        refetch()
+    }, [])
 
     const totalSpentCalculator = (expenses) => {
         return expenses.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0);
@@ -57,30 +61,40 @@ const Budgets = () => {
             headerName: "Year",
             width: 150,
             flex: 1,
+            headerAlign: 'center', align: 'center',
+            headerClassName: 'tb-header',
         },
         {
             field: "month",
             headerName: "Month",
             width: 150,
             flex: 1,
+            headerAlign: 'center', align: 'center',
+            headerClassName: 'tb-header',
         },
         {
             field: "budgetLimit",
             headerName: "Budget",
             width: 90,
             flex: 1,
+            headerAlign: 'center', align: 'center',
+            headerClassName: 'tb-header',
         },
         {
             field: "expenses",
             headerName: "Money Spent",
             width: 90,
             flex: 1,
+            headerAlign: 'center', align: 'center',
+            headerClassName: 'tb-header',
             valueGetter: ({ value }) => totalSpentCalculator(value)
         },
         {
             field: "Options",
             headerName: "Options",
             width: 120,
+            headerAlign: 'center', align: 'center',
+            headerClassName: 'tb-header',
             renderCell: ({ row }) => {
                 return <>
                     <button className="button" onClick={() => {
@@ -114,7 +128,7 @@ const Budgets = () => {
                 <div className="container conatinercon">
                     <div>
                         <div className="overview">
-                            <div className="overview-div d-flex justify-content-between">
+                            <div className="budget-div d-flex justify-content-between">
                                 <h1 className="overviewtxt">Budgets</h1>
                                 <div className="date-div">
                                     <button

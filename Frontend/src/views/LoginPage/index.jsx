@@ -8,16 +8,15 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginValidation } from "../../validationSchema/loginValidation";
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { setProfileData } from "../../redux/slices/profileSlice";
 import jwtDecode from "jwt-decode";
 import { CircularProgress } from "@mui/material";
 import { logInApi } from "../../api/services";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Loginpage = () => {
-	const queryClient = useQueryClient();
 	const [passwordVisibile, setPasswordVisibile] = useState(false);
 	const {
 		handleSubmit,
@@ -41,7 +40,6 @@ const Loginpage = () => {
 				localStorage.setItem("token", data.token);
 				localStorage.setItem("userId", decodedData.user.userId);
 				dispatch(setProfileData(decodedData));
-				await queryClient.refetchQueries({ queryKey: ["profileData"] });
 			} else {
 				toast.error(data.response);
 			}

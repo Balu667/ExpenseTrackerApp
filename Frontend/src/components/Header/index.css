@@ -33,7 +33,7 @@
 	color: #f2f2f2;
 }
 .navbar {
-	background: #000;
+	background: #1973be;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -113,4 +113,11 @@
 	display: flex;
 	align-items: center;
 	gap: 7px;
+}
+
+.header-btn{
+	background: none;
+	border: 1px solid #fff;
+	padding: 5px 10px !important;
+	border-radius: 5px;
 }
